@@ -6,13 +6,25 @@ function Footer() {
       <div className="container border-top mt-5">
         <div className="row mt-5">
           <div className="col">
-            <img src="media/images/logo.svg" style={{ width: "50%" }} />
+            <img
+              src="media/logo.svg"
+              style={{ width: "50%", paddingBottom: "20px" }}
+            />
             <p>
               &copy; 2010 - 2024, Not Zerodha Broking Ltd. All rights reserved.
             </p>
+            <span className="footerpad">
+              <i className="fa-brands fa-x-twitter"></i>
+              <i className="fa-brands fa-square-facebook"></i>
+              <i className="fa-brands fa-linkedin-in"></i>
+              <i className="fa-brands fa-youtube"></i>
+            </span>
+            <hr style={{ width: "70%" }}></hr>
           </div>
-          <div className="col">
-            <p>Company</p>
+          <div className="col footerstyle">
+            <p>
+              <b>Company</b>
+            </p>
             <a href="">About</a>
             <br />
             <a href="">Products</a>
@@ -30,8 +42,10 @@ function Footer() {
             <a href="">Zerodha cares (CSR)</a>
             <br />
           </div>
-          <div className="col">
-            <p>Support</p>
+          <div className="col footerstyle">
+            <p>
+              <b>Support</b>
+            </p>
             <a href="">Contact</a>
             <br />
             <a href="">Support portal</a>
@@ -43,8 +57,10 @@ function Footer() {
             <a href="">Downloads & resources</a>
             <br />
           </div>
-          <div className="col">
-            <p>Account</p>
+          <div className="col footerstyle">
+            <p>
+              <b>Account</b>
+            </p>
             <a href="">Open an account</a>
             <br />
             <a href="">Fund transfer</a>
@@ -81,22 +97,22 @@ function Footer() {
           </p>
 
           <p>
-            "Prevent unauthorised transactions in your account. Update your
+            &quot;Prevent unauthorised transactions in your account. Update your
             mobile numbers/email IDs with your stock brokers. Receive
             information of your transactions directly from Exchange on your
             mobile/email at the end of the day. Issued in the interest of
             investors. KYC is one time exercise while dealing in securities
             markets - once KYC is done through a SEBI registered intermediary
             (broker, DP, Mutual Fund etc.), you need not undergo the same
-            process again when you approach another intermediary." Dear
+            process again when you approach another intermediary.&quot; Dear
             Investor, if you are subscribing to an IPO, there is no need to
             issue a cheque. Please write the Bank account number and sign the
             IPO application form to authorize your bank to make payment in case
             of allotment. In case of non allotment the funds will remain in your
-            bank account. As a business we don't give stock tips, and have not
-            authorized anyone to trade on behalf of others. If you find anyone
-            claiming to be part of Zerodha and offering such services, please
-            create a ticket here.
+            bank account. As a business we don&apos;t give stock tips, and have
+            not authorized anyone to trade on behalf of others. If you find
+            anyone claiming to be part of Zerodha and offering such services,
+            please create a ticket here.
           </p>
         </div>
       </div>

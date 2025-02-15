@@ -1,25 +1,26 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Team() {
   return (
-    <div className="container">
-      <div className="row p-3 mt-5 border-top">
-        <h1 className="text-center ">People</h1>
+    <div style={{ marginBottom: "10%" }} className="container pt-5">
+      <div className="row mb-2 p-3 ">
+        <h1 className="fs-2 text-center">People</h1>
       </div>
-
-      <div
-        className="row p-3 text-muted"
-        style={{ lineHeight: "1.8", fontSize: "1.2em" }}
-      >
-        <div className="col-6 p-3 text-center">
+      <div className="row mt-2 p-1" style={{ fontSize: "17px" }}>
+        <div className="col-6 pl-5">
           <img
-            src="media/images/nithinKamath.jpg"
-            style={{ borderRadius: "100%", width: "50%" }}
+            style={{ borderRadius: "100%", width: "60%", marginLeft: "150px" }}
+            src="media/shubho2.png"
           />
-          <h4 className="mt-5">Nithin Kamath</h4>
-          <h6>Founder, CEO</h6>
+          <h1 style={{ paddingLeft: "8.5%" }} className="fs-2 text-center">
+            SHUBHO
+          </h1>
+          <p style={{ paddingLeft: "8.5%" }} className="text-muted text-center">
+            Founder, CEO
+          </p>
         </div>
-        <div className="col-6 p-3">
+        <div className="col-6 p-5">
           <p>
             Nithin bootstrapped and founded Zerodha in 2010 to overcome the
             hurdles he faced during his decade long stint as a trader. Today,
@@ -29,10 +30,23 @@ function Team() {
             He is a member of the SEBI Secondary Market Advisory Committee
             (SMAC) and the Market Data Advisory Committee (MDAC).
           </p>
-          <p>Playing basketball is his zen.</p>
           <p>
-            Connect on <a href="">Homepage</a> / <a href="">TradingQnA</a> /{" "}
-            <a href="">Twitter</a>
+            Playing basketball is his zen.<br></br>
+            <br></br>Connect on{" "}
+            <Link style={{ textDecoration: "none" }} to="/">
+              Homepage
+            </Link>{" "}
+            /{" "}
+            <Link style={{ textDecoration: "none" }} to="/">
+              TradingQnA
+            </Link>{" "}
+            /{" "}
+            <Link
+              style={{ textDecoration: "none" }}
+              to="https://x.com/ShubhoBroo"
+            >
+              Twitter
+            </Link>
           </p>
         </div>
       </div>

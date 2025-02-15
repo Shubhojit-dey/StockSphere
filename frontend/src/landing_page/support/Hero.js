@@ -3,30 +3,36 @@ import React from "react";
 function Hero() {
   return (
     <section className="container-fluid" id="supportHero">
-      <div className="p-5 " id="supportWrapper">
+      <div className="p-5" id="supportWrapper">
         <h4>Support Portal</h4>
-        <a href="">Track Tickets</a>
+        <a style={{ color: "white", fontSize: "1.1rem" }} href="#">
+          Track tickets
+        </a>
       </div>
-      <div className="row p-5 m-3">
-        <div className="col-6 p-3">
-          <h1 className="fs-3">
-            Search for an answer or browse help topics to create a ticket
+      <div className="row p-3 m-3 align-left">
+        <div className="col-6" id="supportLink">
+          <h1 className="fs-4">
+            Search for an answer or browse help topics to create a<br></br>
+            ticket
           </h1>
-          <input placeholder="Eg. how do I activate F&O" />
-          <br />
-          <a href="">Track account opening</a>
-          <a href="">Track segment activation</a>
-          <a href="">Intraday margins</a>
-          <a href="">Kite user manual</a>
+          <input
+            type="text"
+            placeholder="Eg: how do i activate F&O, why my order getting rejected ... "
+          ></input>{" "}
+          <br></br>
+          <a href="#">Track account opening</a>
+          <a href="#">Track segment activation</a>
+          <a href="#">Intraday margins</a> <br></br>
+          <a href="#">Kite user manual</a>
         </div>
-        <div className="col-6 p-3">
-          <h1 className="fs-3">Featured</h1>
+        <div className="col-6 px-5">
+          <h4>Featured</h4>
           <ol>
-            <li>
-              <a href="">Current Takeovers and Delisting - January 2024</a>
+            <li style={{ paddingBottom: "2%" }}>
+              <a href="#">Latest Intraday leverages and Square-off timings</a>
             </li>
             <li>
-              <a href="">Latest Intraday leverages - MIS & CO</a>
+              <a href="#">Current Takeovers and Delisting - February 2025</a>
             </li>
           </ol>
         </div>

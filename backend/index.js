@@ -4,11 +4,14 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const cors = require("cors");
+const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
 
 const { HoldingsModel } = require("./model/HoldingsModel");
 
 const { PositionsModel } = require("./model/PositionsModel");
 const { OrdersModel } = require("./model/OrdersModel");
+const { UserModel } = require("./model/UserModel");
 
 const PORT = process.env.PORT || 3002;
 const uri = process.env.MONGO_URL;
@@ -17,6 +20,7 @@ const app = express();
 
 app.use(cors());
 app.use(bodyParser.json());
+app.use(express.json());
 
 // app.get("/addHoldings", async (req, res) => {
 //   let tempHoldings = [
@@ -187,6 +191,35 @@ app.use(bodyParser.json());
 //   res.send("Done!");
 // });
 
+// Signup Route
+
+app.post("/signup", async (req, res) => {
+  const { username, email, password } = req.body;
+
+  const hashedPassword = await bcrypt.hash(password, 10);
+  const user = new UserModel({ username, email, password: hashedPassword });
+
+  try {
+    await user.save();
+    res.status(201).json({ message: "User Registered" });
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
+});
+
+app.post("/login", async (req, res) => {
+  const { email, password } = req.body;
+
+  const user = await UserModel.findOne({ email });
+  if (!user) return res.status(400).json({ message: "User not found" });
+
+  const isMatch = await bcrypt.compare(password, user.password);
+  if (!isMatch) return res.status(400).json({ message: "Invalid credentials" });
+
+  const token = jwt.sign({ id: user._id }, "secretkey", { expiresIn: "1h" });
+  res.json({ token });
+});
+
 app.get("/allHoldings", async (req, res) => {
   let allHoldings = await HoldingsModel.find({});
   res.json(allHoldings);
@@ -209,9 +242,17 @@ app.post("/newOrder", async (req, res) => {
 
   res.send("Order saved!");
 });
+app.get("/allOrders", async (req, res) => {
+  let allOrders = await OrdersModel.find({});
+  res.json(allOrders);
+});
 
 app.listen(PORT, () => {
-  console.log("App started!");
-  mongoose.connect(uri);
+  console.log("App started on port " + PORT);
+  mongoose.connect(uri),
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    };
   console.log("DB started!");
 });

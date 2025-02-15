@@ -12,29 +12,56 @@ code {
     monospace;
 }
 
-.nav-link{
+.nav-link {
   margin-left: 40px;
+}
+.navstyle li a {
+  color: black;
+}
+.navstyle li a:hover {
+  color: blue;
+}
+
+.footerstyle a {
+  text-decoration: none;
+  color: black;
+  opacity: 0.7;
+}
+.footerstyle a:hover {
+  color: blue;
+  opacity: 1;
+}
+.footerpad i {
+  padding-left: 18px;
+  margin-right: 20px;
+}
+
+.supportstyle a {
+  display: block;
+  margin-bottom: 20px;
 }
 
 #supportHero{
   background-color: rgb(56, 126, 209);
   color: white;
 }
-
 #supportHero a{
   color: white;
 }
-
 #supportWrapper{
   display: flex;
   justify-content: space-between;
   margin: 0 150px;
 }
-
 #supportHero input{
   padding: 20px 50px;
   width: 100%;
-  font-size: 20px;
+  margin: 3% 0;
   border-radius: 10px;
   border: none;
+}
+#supportLink a{
+  font-size: 1.1rem;
+  padding: 20px 20px;
+  text-decoration: underline;
 }

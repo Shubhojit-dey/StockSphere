@@ -1,38 +1,52 @@
 import React from "react";
 
 function LeftSection({
-  imageURL,
+  productImgURL,
   productName,
-  productDesription,
+  productdescription,
   tryDemo,
   learnMore,
-  googlePlay,
+  playStore,
   appStore,
+  linkName,
+  linkname2,
 }) {
   return (
-    <div className="container mt-5">
-      <div className="row">
-        <div className="col-6">
-          <img src={imageURL} />
+    <div style={{ margin: "5%" }} className="container">
+      <div style={{ padding: "2% 0% 2% 5%", display: "flex" }} className="row">
+        <div className="col-6 p-3">
+          <img src={productImgURL} />
         </div>
-        <div className="col-6 p-5 mt-5">
-          <h1>{productName}</h1>
-          <p>{productDesription}</p>
-          <div>
-            <a href={tryDemo}>Try Demo</a>
-            <a href={learnMore} style={{ marginLeft: "50px" }}>
-              Learn More
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+          }}
+          className="col-6 p-3"
+        >
+          <h2>{productName}</h2>
+          <p>{productdescription}</p>
+          <div className="m-3">
+            <a
+              style={{ textDecoration: "none", marginRight: "4.6rem" }}
+              href={tryDemo}
+            >
+              {linkName}{" "}
+            </a>
+            <a style={{ textDecoration: "none" }} href={learnMore}>
+              {linkname2}
             </a>
           </div>
-          <div className="mt-3">
-            <a href={googlePlay}>
-              <img src="media/images/googlePlayBadge.svg" />
+          <div>
+            <a
+              style={{ textDecoration: "none", marginRight: "1.2rem" }}
+              href={playStore}
+            >
+              <img style={{ width: "22%" }} src="media/googlePlayBadge.svg" />{" "}
             </a>
-            <a href={appStore}>
-              <img
-                src="media/images/appstoreBadge.svg"
-                style={{ marginLeft: "50px" }}
-              />
+            <a style={{ textDecoration: "none" }} href={appStore}>
+              <img style={{ width: "20%" }} src="media/appstoreBadge.svg" />{" "}
             </a>
           </div>
         </div>
