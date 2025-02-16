@@ -81,7 +81,7 @@ function Universe() {
             </p>
           </div>
           <div className="row">
-            <button
+            <a href="https://stocksphere-1.onrender.com/signup"><button
               style={{
                 width: "15%",
                 margin: "5% auto",
@@ -92,7 +92,7 @@ function Universe() {
               className="btn btn-primary text-center"
             >
               Sign up for free
-            </button>
+            </button></a>
           </div>
         </div>
       </div>
