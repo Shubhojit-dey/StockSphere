@@ -36,7 +36,7 @@ const Signup = () => {
       });
       localStorage.setItem("token", res.data.token);
       alert("Login Successful!");
-      window.location.href = "http://localhost:3001";
+      window.location.href = "https://stocksphere-dashboard-1err.onrender.com";
     } catch (error) {
       alert(error.response.data.message);
     }
