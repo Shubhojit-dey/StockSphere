@@ -9,7 +9,7 @@ function OpenAccount() {
           Modern platforms and apps, ₹0 investments, and flat ₹20 intraday and
           F&O trades.
         </p>
-        <a href="http://localhost:3000/signup"><button
+        <a href="https://stocksphere-1.onrender.com/signup"><button
           style={{
             width: "15%",
             margin: "0 auto",
