@@ -10,7 +10,7 @@ function Hero() {
           Online platform to invest in stocks, derivatives, mutual funds, ETFs,
           bonds, and more.
         </p>
-        <a href="https://stocksphere-1.onrender.com/signup"><button
+        <a href="/signup"><button
           style={{
             width: "15%",
             margin: "0 auto",
