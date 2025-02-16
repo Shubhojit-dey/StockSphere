@@ -15,7 +15,7 @@ const Signup = () => {
   const handleSignup = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:3002/signup", {
+      await axios.post("https://stocksphere.onrender.com/signup", {
         username,
         email,
         password,
@@ -30,7 +30,7 @@ const Signup = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:3002/login", {
+      const res = await axios.post("https://stocksphere.onrender.com/login", {
         email:loginEmail,
         password:loginPassword,
       });
