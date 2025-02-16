@@ -6,7 +6,7 @@ const TopBar = () => {
   const handleLogout = () => {
     localStorage.removeItem("token");
     alert("Logged out successfully!");
-    window.location.href = "http://localhost:3000/"; // Redirect to frontend login page
+    window.location.href = "https://stocksphere-1.onrender.com"; // Redirect to frontend login page
   };
   return (
     <div className="topbar-container">
