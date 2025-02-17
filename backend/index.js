@@ -12,6 +12,8 @@ const { HoldingsModel } = require("./model/HoldingsModel");
 const { PositionsModel } = require("./model/PositionsModel");
 const { OrdersModel } = require("./model/OrdersModel");
 const { UserModel } = require("./model/UserModel");
+const path = require("path");
+app.use(express.static(path.join(__dirname, "build")));
 
 const PORT = process.env.PORT || 3002;
 const uri = process.env.MONGO_URL;
@@ -245,6 +247,10 @@ app.post("/newOrder", async (req, res) => {
 app.get("/allOrders", async (req, res) => {
   let allOrders = await OrdersModel.find({});
   res.json(allOrders);
+});
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "build", "index.html"));
 });
 
 app.listen(PORT, () => {
