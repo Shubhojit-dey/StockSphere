@@ -13,7 +13,7 @@ const { PositionsModel } = require("./model/PositionsModel");
 const { OrdersModel } = require("./model/OrdersModel");
 const { UserModel } = require("./model/UserModel");
 const path = require("path");
-app.use(express.static(path.join(__dirname, "build")));
+
 
 const PORT = process.env.PORT || 3002;
 const uri = process.env.MONGO_URL;
@@ -23,6 +23,7 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 app.use(express.json());
+app.use(express.static(path.join(__dirname, "build")));
 
 // app.get("/addHoldings", async (req, res) => {
 //   let tempHoldings = [
