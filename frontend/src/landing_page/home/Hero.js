@@ -1,6 +1,7 @@
 import React from "react";
-
+import { Link, useNavigate } from 'react-router-dom';
 function Hero() {
+   const router = useNavigate();
   return (
     <div className="container p-5">
       <div className="row text-center">
@@ -10,7 +11,7 @@ function Hero() {
           Online platform to invest in stocks, derivatives, mutual funds, ETFs,
           bonds, and more.
         </p>
-        <a href="/signup"><button
+       <button
           style={{
             width: "15%",
             margin: "0 auto",
@@ -19,9 +20,10 @@ function Hero() {
           }}
           type="button"
           className="btn btn-primary"
+          onClick={() => router('/signup')}
         >
           Signup up for free
-        </button></a>
+        </button>
       </div>
     </div>
   );
