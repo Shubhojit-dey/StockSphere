@@ -1,6 +1,7 @@
 import React from "react";
-
+import { Link, useNavigate } from 'react-router-dom';
 function OpenAccount() {
+  const router = useNavigate();
   return (
     <div className="container mt-5 p-5">
       <div className="row text-center">
@@ -9,7 +10,7 @@ function OpenAccount() {
           Modern platforms and apps, ₹0 investments, and flat ₹20 intraday and
           F&O trades.
         </p>
-        <a href="https://stocksphere-1.onrender.com/signup"><button
+        <button
           style={{
             width: "15%",
             margin: "0 auto",
@@ -18,9 +19,10 @@ function OpenAccount() {
           }}
           type="button"
           className="btn btn-primary pb-3"
+          onClick={() => router('/signup')}
         >
           Signup up for free
-        </button></a>
+        </button>
       </div>
     </div>
   );
